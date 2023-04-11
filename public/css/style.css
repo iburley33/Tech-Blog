@@ -1,0 +1,194 @@
+body {
+  height: 100vh;
+}
+
+.font {
+  font-family: "Raleway";
+  text-align: center;
+  justify-content: center;
+}
+
+.rowBoat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.widgets {
+  justify-content: center;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+/* .forecastTitle {
+  padding-bottom: 50px;
+  height: 60px;
+} */
+
+#map {
+  position: relative;
+}
+
+#search-div {
+  width: 50%;
+  min-width: 420px;
+}
+
+.new-user-div {
+  width: 50%;
+  min-width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.saveButton {
+  width: 160px;
+  margin-top: 5px;
+}
+
+.viewButton {
+  width: 160px;
+  margin-top: 5px;
+}
+
+#login-container {
+  text-align: center;
+}
+
+.loginButton {
+  width: 160px;
+}
+
+.createAccountButton {
+  width: 160px;
+}
+
+#login-buttons-container {
+  padding: 10px;
+}
+
+#where-to-label {
+  text-align: center;
+}
+
+.lets-ride {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#search-button {
+  width: 160px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 577px) {
+  #search-div {
+    width: 90%;
+  }
+  #login-credentials-div {
+    width: 90%;
+  }
+  .rowBoat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .widgets {
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+  }
+}
+
+/* login */
+
+/* body {
+    height: 100vh;
+} */
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login-credentials-div {
+  width: 50%;
+  min-width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#username-input {
+  margin: 2.5px;
+}
+
+#password-input {
+  margin: 2.5px;
+}
+
+#login-submit-btn {
+  width: 100%;
+  text-align: center;
+}
+
+a {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* create account */
+
+/* body {
+  height: 100vh;
+} */
+
+/* .container {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+.new-user-div {
+  width: 50%;
+  min-width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new-username-input {
+  margin: 2.5px;
+}
+
+.new-password-input {
+  margin: 2.5px;
+}
+
+.new-password-verification {
+  margin: 2.5px;
+}
+
+#acct-submit-btn {
+  width: 50%;
+}
+
+a {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#create-account-btn {
+  width: 100%;
+  text-align: center;
+}
+
+#login-form {
+  width: 50%;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,700;0,800;1,100;1,200&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin="">
+    </script>
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Tech Blog</title>
+</head>
+
+<body>
+
+<div class="navbar-end">
+  {{#if currentUser}}
+  <a class="navbar-item" href="/controllers/api/userRoutes.js">Logout</a>
+  {{/if}}
+</div>
+
+  <div class="box has-background-grey-darker">
+    <h1 class="font is-size-1 has-background-success-light">The Tech Blog</h1>
+
+
+    
+
+  {{!--  <div id="login-container">
+      <h2>Login or create an account to access saved data</h2>
+      <div id="login-buttons-container">
+        <a href="login.html">
+        <button class="button has-background-white mx-auto my-auto font loginButton" id="loginButton">Login</button>
+        </a>
+        <a href="createaccount.html">
+          <button class="button has-background-white mx-auto my-auto font createAccountButton">Create account</button>
+        </a>
+      </div> --}}
+
+    </div>
+
+    {{{ body }}}
+
+  </div class="mx-auto mt-1">
+
+</body>
+
+</html>
+
+<!-- Need to work on CSS -->
+<!-- Need to do click event listener -->
+<!-- Need to adjust width of submit button -->
+
