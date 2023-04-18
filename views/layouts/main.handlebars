@@ -22,40 +22,53 @@
 
 <body>
 
-<div class="navbar-end">
-  {{#if currentUser}}
-  <a class="navbar-item" href="/controllers/api/userRoutes.js">Logout</a>
-  {{/if}}
-</div>
-
-  <div class="box has-background-grey-darker">
+  <div class="has-background-grey-darker">
+    <div class="navbar has-background-grey-darker">
+      <a href="/">
+      <button class="button is-dark" id="homepage-button">Homepage</button>
+      </a>
+      <a  href="/dashboard">
+      <button class="button is-dark" id="dashboard-button">Dashboard</button>
+      </a>
+      {{#if logged_in}}
+      <a href="/logout">
+      <button  class="button is-dark" id="logout-button">Logout</button>
+      </a>
+      {{else}}
+      <a  href="/login">
+      <button class="button is-dark" id="login-button">Login</button>
+      </a>
+      {{/if}}
+      {{!-- <button class="button is-dark" id="login-button">Login</button>
+      <button class="button is-dark" id="logout-button">Logout</button>
+      --}}
+    </div>
     <h1 class="font is-size-1 has-background-success-light">The Tech Blog</h1>
 
+  </div>
 
-    
-
-  {{!--  <div id="login-container">
-      <h2>Login or create an account to access saved data</h2>
-      <div id="login-buttons-container">
-        <a href="login.html">
-        <button class="button has-background-white mx-auto my-auto font loginButton" id="loginButton">Login</button>
-        </a>
-        <a href="createaccount.html">
-          <button class="button has-background-white mx-auto my-auto font createAccountButton">Create account</button>
-        </a>
-      </div> --}}
-
-    </div>
-
-    {{{ body }}}
+  {{{ body }}}
 
   </div class="mx-auto mt-1">
 
 </body>
 
+
+
 </html>
 
-<!-- Need to work on CSS -->
-<!-- Need to do click event listener -->
-<!-- Need to adjust width of submit button -->
+{{!-- to do
+create dashboard page as demonstrated in the assets. Set up with new routing.
+logout and login logic need to show the oppsite button and hide its own
+blog post models with topic and body need to extend user models
+dashboar posts need to save posts to logged in users
+dashboard page needs to us withauth to verify login and route you to the login page first
+handlebars will need to render blog posts to the homepage by looping through all blog posts
+will comments extend blog posts? or just push into the blog post model?
+need to add logic to loop through all blog posts for logged in user and render them here
+need to add logic to a "new blog post" button to render a submission form
+need to add logic to renderred submission form for posting to new blog entries and rendering the new entry on the page
 
+
+
+--}}

@@ -1,4 +1,3 @@
-const db = require("./db");
 const User = require("./schema");
 
 class User {
