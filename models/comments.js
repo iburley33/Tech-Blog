@@ -19,11 +19,18 @@ Comments.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    blog_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'blog',
+        key: 'id',
+      },
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id',
+        key: 'id', // is this going to work if name is not a primary key?
       },
     },
   },
@@ -31,7 +38,7 @@ Comments.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'comment',
   }
 );
 

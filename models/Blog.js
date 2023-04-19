@@ -11,7 +11,7 @@ Blog.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    subject: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -27,7 +27,7 @@ Blog.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id',
+        key: 'id', // is this going to work if name is not a primary key?
       },
     },
   },
@@ -35,7 +35,7 @@ Blog.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'blog',
   }
 );
 

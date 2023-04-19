@@ -1,6 +1,19 @@
-<div>
-    {{!--  need to add logic to loop through all blog posts and render them here--}}
+<!-- Loop over each object in the projects array -->
+<div class="container">
+{{#each blogs as |blog| }}
+  <div class="box mx-auto my-autor">
+    <div class="has-background-success-light">
+      <h2 class="font is-size-3 ">
+        {{blog.title}}
+      </h2>
+    </div>
+    <p class="blogBody">
+      {{blog.body}}
+    </p>
+    <div class="blogStamp">
+      <p>Created by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+    </div>
+  </div>
+{{/each}}
 </div>
-
-
 <script src="/js/script.js"></script>

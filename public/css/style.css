@@ -107,13 +107,13 @@ body {
 /* body {
     height: 100vh;
 } */
-
+/* 
 .container {
   height: 100px;
   display: flex;
   flex-wrap: wrap;
   padding: 40px;
-}
+} */
 
 .login-credentials-div {
   width: 50%;
@@ -186,4 +186,14 @@ a {
 
 .new-blog-input {
   height: 200px;
+}
+
+.blogBody {
+  min-height: 200px;
+  min-width: 400px;
+}
+
+.blogStamp {
+  font-size: x-small;
+  text-align: end;
 }

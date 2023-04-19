@@ -1,43 +1,29 @@
-const logoutHandler = async () => {
-  fetch("/api/users/logout", {
-    method: "POST",
-  }).then(res => {
-    if (res.status == 204) {
-      document.location.replace("/login")
+const newFormHandler = async (event) => {
+  event.preventDefault();
+
+  const title = document.querySelector('.new-title-input').value.trim();
+  const body = document.querySelector('.new-blog-input').value.trim();
+
+  if (title && body) {
+    const response = await fetch(`/api/blogs`, {
+      method: 'POST',
+      body: JSON.stringify({ title, body }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert('Failed to create blog post');
     }
-  });
-  // add logic to hide logout button and show login button
-};
-
-const postBlog = async () =>
-  fetch('')
-const redirectLogin = (event) => {
-  event.preventDefault();
-  console.log("clicked")
-  document.location.replace("/login");
-  console.log("got here")
-};
-
-const redirectDashboard = (event) => {
-  event.preventDefault();
-  console.log("clicked")
-  document.location.replace("/dashboard");
-  console.log("got here")
-};
-
-const redirectHomepage = (event) => {
-  event.preventDefault();
-  console.log("clicked")
-  document.location.replace("/");
-  console.log("got here")
+  }
 };
 
 
-/* document.querySelector(".saveButton").addEventListener("click", saveLocation);
- */
-document.querySelector("#logout-button").addEventListener("click", logoutHandler);
-document.querySelector("#login-button").addEventListener("click", redirectLogin);
-document.querySelector("#dashboard-button").addEventListener("click", redirectDashboard);
-document.querySelector("#homepage-button").addEventListener("click", redirectHomepage);
 
+document
+  .querySelector('.new-blog-form')
+  .addEventListener('submit', newFormHandler);
 
