@@ -1,7 +1,7 @@
 <!-- Loop over each object in the projects array -->
 <div class="container">
-{{#each blogs as |blog| }}
-  <div class="box mx-auto my-autor">
+  {{#each blogs as |blog| }}
+  <div class="box mx-auto my-auto">
     <div class="has-background-success-light">
       <h2 class="font is-size-3 ">
         {{blog.title}}
@@ -13,7 +13,30 @@
     <div class="blogStamp">
       <p>Created by {{blog.user.name}} on {{format_date blog.date_created}}</p>
     </div>
+
+    {{#if blog.comment}}
+    {{#each blog.comment as |comment|}}
+    <div class="box mx-auto my-auto savedComment">
+      <div class="delDiv">
+        <button class="button blogDelete">Delete</button>
+      </div>
+      <p>{{comment.comment}}</p>
+      <div class="blogStamp">
+        <p>Created by {{comment.user}} on {{format_date comment.date_created}}</p>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+    <div class="container">
+      <form class="box columns mx-auto my-auto new-user-div new-blog-form">
+        <h2>Enter comment here:</h2>
+        <input class="input new-comment" type="text" placeholder="Write your comment here.">
+        <button class="button has-background-success-light mx-auto mt-4 blog-submit-btn"
+          id="comment-submit-btn">Post</button>
+      </form>
+    </div>
   </div>
-{{/each}}
+  {{/each}}
+
 </div>
 <script src="/js/script.js"></script>

@@ -197,3 +197,11 @@ a {
   font-size: x-small;
   text-align: end;
 }
+
+.blogDelete {
+  font-size: x-small;
+}
+
+.delDiv {
+  justify-content: right;
+}

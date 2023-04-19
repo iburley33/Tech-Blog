@@ -42,6 +42,37 @@ document.querySelector("#homepage-button").addEventListener("click", redirectHom
 
  */
 
+
+const newFormHandler = async (event) => {
+  event.preventDefault();
+
+  const comment = document.querySelector('.new-comment').value.trim();
+
+  if (comment) {
+    const response = await fetch(`/api/comments`, {
+      method: 'POST',
+      body: JSON.stringify({ comment }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert('Failed to create blog post');
+    }
+  }
+};
+
+
+
+document
+  .querySelector('.new-comment')
+  .addEventListener('submit', newFormHandler);
+
+
+
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');

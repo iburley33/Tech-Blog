@@ -30,6 +30,13 @@ Blog.init(
         key: 'id', // is this going to work if name is not a primary key?
       },
     },
+    comments: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'comment',
+        key: 'id',
+      }
+    }
   },
   {
     sequelize,
