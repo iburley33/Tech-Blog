@@ -17,9 +17,6 @@
     {{#if blog.comments}}
     {{#each blog.comments as |comment|}}
     <div class="box mx-auto my-auto savedComment">
-      <div class="delDiv">
-        <button class="button blogDelete">Delete</button>
-      </div>
       <p>{{comment.body}}</p>
       <div class="blogStamp">
         <p>Created on {{format_date comment.date_created}}</p>
