@@ -13,7 +13,6 @@ router.get('/', withAuth, async (req, res) => {
 
     const blogs = userData.map((blog) => blog.get({ plain: true }));
     //console.log('this is all userdata', userData)
-    console.log(blogs[1].comments);
     res.render('homepage', {
       blogs,
       logged_in: req.session.logged_in,
