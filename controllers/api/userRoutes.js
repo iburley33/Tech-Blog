@@ -51,11 +51,11 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/logout", (req, res) => {
+router.get("/logout", (req, res) => {
   console.log("logging out...");
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(204).end();
+      res.render('login');
     });
   } else {
     res.status(404).end();

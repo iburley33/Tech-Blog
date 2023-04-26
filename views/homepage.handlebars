@@ -14,15 +14,15 @@
       <p>Created by {{blog.user.name}} on {{format_date blog.date_created}}</p>
     </div>
 
-    {{#if blog.comment}}
-    {{#each blog.comment as |comment|}}
+    {{#if blog.comments}}
+    {{#each blog.comments as |comment|}}
     <div class="box mx-auto my-auto savedComment">
       <div class="delDiv">
         <button class="button blogDelete">Delete</button>
       </div>
-      <p>{{comment.comment}}</p>
+      <p>{{comment.body}}</p>
       <div class="blogStamp">
-        <p>Created by {{comment.user}} on {{format_date comment.date_created}}</p>
+        <p>Created on {{format_date comment.date_created}}</p>
       </div>
     </div>
     {{/each}}
@@ -32,7 +32,7 @@
         <h2>Enter comment here:</h2>
         <input class="input new-comment" type="text" placeholder="Write your comment here.">
         <button class="button has-background-success-light mx-auto mt-4 blog-submit-btn"
-          id="comment-submit-btn">Post</button>
+          id="comment-submit-btn" value= {{blog.id}}>Post</button>
       </form>
     </div>
   </div>

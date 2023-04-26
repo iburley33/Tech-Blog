@@ -47,20 +47,20 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const comment = document.querySelector('.new-comment').value.trim();
-
+  const id = parseInt(event.target.value);
   if (comment) {
     const response = await fetch(`/api/comments`, {
       method: 'POST',
-      body: JSON.stringify({ comment }),
+      body: JSON.stringify({ body: comment, blog_id: id }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-
+    console.log(response)
     if (response.ok) {
-      document.location.replace('/');
+      document.location.reload();
     } else {
-      alert('Failed to create blog post');
+      alert('Failed to create comment');
     }
   }
 };
@@ -68,8 +68,9 @@ const newFormHandler = async (event) => {
 
 
 document
-  .querySelector('.new-comment')
-  .addEventListener('submit', newFormHandler);
+  .getElementById('comment-submit-btn')
+  .addEventListener('click',(event) => newFormHandler(event));
+
 
 
 

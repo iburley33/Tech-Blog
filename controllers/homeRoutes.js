@@ -1,22 +1,25 @@
 const router = require('express').Router();
-const { User, Blog } = require('../models');
+const { User, Blog, Comments } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
+  console.log("route hit")
   try {
     const userData = await Blog.findAll({
-      include: [{model: User, attributes: ['name']}],
+      include: [{model: User, attributes: ['name']}, {model: Comments, attributes: ['body', 'blog_id', 'date_created']}],
       order: [['date_created', 'DESC']],
     });
+    //console.log('this is all userdata', userData)
 
-    const blogs = userData.map((project) => project.get({ plain: true }));
-    console.log(blogs);
+    const blogs = userData.map((blog) => blog.get({ plain: true }));
+    //console.log('this is all userdata', userData)
+    console.log(blogs[1].comments);
     res.render('homepage', {
       blogs,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
-    console.err(err);
+    console.log(err);
     res.status(500).json(err);
   }
 });

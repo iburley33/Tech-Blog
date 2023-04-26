@@ -76,7 +76,6 @@ document
 
   /* document.querySelector(".saveButton").addEventListener("click", saveLocation);
    */
-  document.querySelector("#logout-button").addEventListener("click", logoutHandler);
   document.querySelector("#login-button").addEventListener("click", redirectLogin);
   document.querySelector("#dashboard-button").addEventListener("click", redirectDashboard);
   document.querySelector("#homepage-button").addEventListener("click", redirectHomepage);

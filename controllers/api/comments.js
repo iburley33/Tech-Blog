@@ -2,11 +2,15 @@ const router = require('express').Router();
 const { Comments } = require('../../models');
 
 router.post('/', async (req, res) => {
+    console.log('this is the one')
   try {
     const newComment = await Comments.create({
       ...req.body,
       user_id: req.session.user_id,
+      
     });
+
+    console.log("created comment", newComment);
 
     res.status(200).json(newComment);
   } catch (err) {

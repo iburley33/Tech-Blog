@@ -27,15 +27,15 @@ Blog.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id', // is this going to work if name is not a primary key?
+        key: 'id', 
       },
     },
-    comments: {
-      type: DataTypes.STRING,
+    comment_id: {
+      type: DataTypes.INTEGER,
       references: {
         model: 'comment',
         key: 'id',
-      }
+      },
     }
   },
   {
